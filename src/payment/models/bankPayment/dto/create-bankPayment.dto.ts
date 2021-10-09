@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
-import { BankAccountType } from '../bankAccount.entity';
+import { BankPaymentType } from '../bankPayment.entity';
 
-export class CreateBankAccountDto {
+export class CreateBankPaymentDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -10,6 +10,6 @@ export class CreateBankAccountDto {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsEnum(BankAccountType)
-  type: BankAccountType;
+  @IsEnum(BankPaymentType)
+  type: BankPaymentType;
 }

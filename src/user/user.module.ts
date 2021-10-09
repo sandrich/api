@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AinModule } from 'src/ain/ain.module';
-import { BankAccountRepository } from 'src/payment/models/bankAccount/bankAccount.repository';
+import { BankPaymentRepository } from 'src/payment/models/bankPayment/bankPayment.repository';
 import { SharedModule } from 'src/shared/shared.module';
 import { UserDataController } from 'src/user/models/userData/userData.controller';
 import { UserDataRepository } from 'src/user/models/userData/userData.repository';
@@ -49,7 +49,7 @@ import { KycService } from './services/kyc.service';
       BankDataRepository,
       RefRepository,
       KycFile,
-      BankAccountRepository,
+      BankPaymentRepository,
     ]),
     SharedModule,
     AinModule,

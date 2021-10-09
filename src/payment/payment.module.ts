@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SharedModule } from 'src/shared/shared.module';
-import { BankAccountController } from './models/bankAccount/bankAccount.controller';
-import { BankAccountRepository } from './models/bankAccount/bankAccount.repository';
-import { BankAccountService } from './models/bankAccount/bankAccount.service';
+import { BankPaymentController } from './models/bankPayment/bankPayment.controller';
+import { BankPaymentRepository } from './models/bankPayment/bankPayment.repository';
+import { BankPaymentService } from './models/bankPayment/bankPayment.service';
 import { BatchController } from './models/batch/batch.controller';
 import { BatchRepository } from './models/batch/batch.repository';
 import { BatchService } from './models/batch/batch.service';
@@ -15,11 +15,11 @@ import { ExchangeService } from './services/exchange.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([BuyPaymentRepository, SellPaymentRepository, BatchRepository, BankAccountRepository]),
+    TypeOrmModule.forFeature([BuyPaymentRepository, SellPaymentRepository, BatchRepository, BankPaymentRepository]),
     SharedModule,
   ],
-  controllers: [PaymentController, BatchController, BankAccountController],
-  providers: [PaymentService, BatchService, ExchangeService, BankAccountService],
-  exports: [PaymentService, BankAccountService],
+  controllers: [PaymentController, BatchController, BankPaymentController],
+  providers: [PaymentService, BatchService, ExchangeService, BankPaymentService],
+  exports: [PaymentService, BankPaymentService],
 })
 export class PaymentModule {}
