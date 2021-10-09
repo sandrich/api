@@ -77,6 +77,8 @@ export abstract class Payment {
 
   //TODO Batch referenzieren
 
+  //TODO bankAccount referenzieren
+
   @UpdateDateColumn()
   updated: Date;
 
